@@ -1,0 +1,41 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: block;
+    background: transparent;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border: none;
+    border: 2px solid #000;
+    color: #000;
+    position: relative;
+    transition: color 0.3s 0.1s ease-in, box-shadow 0.3s, transform 0.3s;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-blue1;
+    z-index: -1;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s;
+  }
+  &:hover {
+    color: #fff;
+    box-shadow: 0rem 1rem 4rem rgba(#000, 0.5);
+    border: 2px solid $color-blue1;
+    transform: translateY(-2px);
+    //border: none;
+  }
+  &:hover::before {
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,17 @@
+.single-comment-card {
+  display: flex;
+  width: 80%;
+  margin: 4rem 0;
+
+  &--left {
+    flex: 1;
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+  &--right {
+    flex: 8;
+    padding: 0 3rem;
+  }
+}

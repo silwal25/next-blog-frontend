@@ -1,0 +1,43 @@
+.search__overlay {
+  position: fixed;
+  background-color: #fff;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  color: #000;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  &--active {
+    display: unset;
+  }
+  padding: 8rem;
+}
+.search__content {
+  position: relative;
+  padding: 8rem 0;
+}
+.search__close {
+  cursor: pointer;
+  position: absolute;
+  right: 5rem;
+  top: 5rem;
+  font-size: 2.5rem;
+}
+.search__input {
+  background-color: transparent;
+  color: #000;
+  border: 0px;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  //margin-left: 2rem;
+  padding: 0.2rem 1rem;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &::placeholder {
+    text-transform: capitalize;
+    color: #000;
+  }
+}

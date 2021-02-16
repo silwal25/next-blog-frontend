@@ -1,0 +1,25 @@
+.footer {
+  margin-top: 5rem;
+  border-top: 1px solid rgba(#000, 0.5);
+  padding: 6rem 0rem;
+  .container {
+    @include centerAlign(column);
+  }
+  &__logo {
+    font-family: "Pacifico", cursive;
+    text-transform: capitalize;
+    font-size: 3.5rem;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+  .navigation {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  &__copyright {
+    display: block;
+  }
+}

@@ -1,0 +1,75 @@
+.header {
+  height: 7rem;
+  position: relative;
+  border-bottom: 1px solid rgba(#000, 0.5);
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  &__logo {
+    font-family: "Pacifico", cursive;
+    text-transform: capitalize;
+    font-size: 3.5rem;
+    font-weight: 400;
+    & a,
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  & .fas {
+    cursor: pointer;
+  }
+}
+
+.navigation {
+  margin: 0 4rem 0 auto;
+  align-self: stretch;
+  &__nav {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    & li {
+      font-size: 2rem;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 4rem;
+      }
+      a {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 1px;
+          background-color: #000;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: all 0.3s cubic-bezier(1, 0.01, 1, 0.67);
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+      a,
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: #000;
+        text-transform: uppercase;
+      }
+      &:hover > div,
+      & > div ul:hover {
+        display: block;
+      }
+    }
+  }
+}

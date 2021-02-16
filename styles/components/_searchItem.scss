@@ -1,0 +1,51 @@
+.search-item {
+  & .grid {
+    justify-content: flex-start;
+  }
+  &__card {
+    flex-basis: 45%;
+    margin-right: 4rem;
+    transition: all 0.3s;
+    a {
+      display: flex;
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+    &:hover {
+      box-shadow: 0 2rem 4rem rgba(#000, 0.5);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__img {
+    margin-right: 2rem;
+    height: 100%;
+  }
+  &__body {
+    padding: 1rem 0;
+  }
+  &__title {
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+  &__date {
+    margin-bottom: 1rem;
+    margin-top: auto;
+  }
+  &__link {
+    display: block;
+  }
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}

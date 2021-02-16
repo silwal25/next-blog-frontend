@@ -1,0 +1,14 @@
+.category-list {
+  list-style: none;
+  & li {
+    margin-top: 1rem;
+    a {
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}

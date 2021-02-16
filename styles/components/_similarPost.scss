@@ -1,0 +1,24 @@
+.similar-post-item {
+  display: flex;
+  margin: 3rem 0;
+  transition: all 0.3s;
+  a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+  }
+  &--left {
+    flex: 1;
+    margin-right: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+  &--right {
+    flex: 1;
+  }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2rem 4rem rgba(#000, 0.5);
+  }
+}

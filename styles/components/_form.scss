@@ -1,0 +1,42 @@
+.form {
+  &__group {
+    position: relative;
+  }
+  &__input {
+    border: 0px;
+    padding: 1rem 2rem;
+    margin: 4rem 0;
+    border-bottom: 2px solid #000;
+    width: 60%;
+    display: block;
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    &:focus:invalid {
+      outline: none;
+      border-bottom: 2px solid red;
+    }
+    &:invalid {
+      border: 1px solid none;
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 1.4rem;
+    }
+  }
+  &__input:placeholder-shown + &__label {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  &__label {
+    position: absolute;
+    left: 1.3rem;
+    bottom: -3rem;
+    display: block;
+    transition: all 0.3s;
+  }
+  &__button {
+  }
+}

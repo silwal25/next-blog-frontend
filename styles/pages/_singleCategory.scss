@@ -1,0 +1,23 @@
+.single-category {
+  margin-top: 5rem;
+  & .container {
+    display: flex;
+  }
+  .grid {
+    justify-content: flex-start;
+  }
+  .card {
+    margin-right: 8rem;
+    flex-basis: 40%;
+    margin-bottom: 8rem;
+  }
+}
+.category-menu {
+  flex: 1;
+  margin-right: 3rem;
+}
+.category-content {
+  flex: 4;
+  &__title {
+  }
+}

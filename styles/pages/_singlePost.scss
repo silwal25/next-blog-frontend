@@ -1,0 +1,57 @@
+.single-post {
+  margin-top: 8rem;
+  & .container {
+    display: flex;
+  }
+  &--left {
+    flex: 5;
+    margin-right: 3rem;
+    //background-color: lightcoral;
+    border-right: 1px solid rgba(#000, 0.2);
+    padding-right: 5rem;
+  }
+  &--right {
+    flex: 2;
+    //background-color: lightblue;
+  }
+  &__img {
+    width: 100%;
+    margin: 5rem 0;
+  }
+  &__date {
+  }
+  &__content {
+    margin-top: 2rem;
+    font-family: "Montserrat", sans-serif;
+    img {
+      width: 50rem;
+      margin: 2rem 0;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__summary {
+    border: 5px solid $color-blue1;
+    padding: 2rem 4rem;
+    width: 80%;
+    ul {
+      list-style-type: circle;
+      margin-left: 1.5rem;
+      & li:last-child {
+        margin-bottom: 5rem;
+      }
+    }
+    h2 {
+      font-weight: 400;
+    }
+  }
+}
+.comment {
+  margin-top: 8rem;
+  .comment-heading {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(#000, 0.5);
+  }
+}
