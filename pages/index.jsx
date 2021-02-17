@@ -22,13 +22,9 @@ export default function Home({ posts, featured }) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(
-    `http://next-blog_strapi_1:1337/posts?featured=true&_sort=published_at:desc&_limit=3`
-  )
+  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/posts?featured=true&_sort=published_at:desc&_limit=3`)
   const posts = await res.json()
-  const featuredRes = await fetch(
-    `http://next-blog_strapi_1:1337/posts?_sort=published_at:DESC&_limit=6`
-  )
+  const featuredRes = await fetch(`https://nextjs-blog-backend.herokuapp.com/posts?_sort=published_at:DESC&_limit=6`)
   const featured = await featuredRes.json()
   return {
     props: {

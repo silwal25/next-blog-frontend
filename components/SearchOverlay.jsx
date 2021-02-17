@@ -13,9 +13,7 @@ const SearchOverlay = () => {
     if (searchTerm.length >= 3) {
       const request = setTimeout(async () => {
         try {
-          const res = await Axios.get(
-            `http://localhost:1337/posts?title_contains=${searchTerm}`
-          )
+          const res = await Axios.get(`https://nextjs-blog-backend.herokuapp.com/posts?title_contains=${searchTerm}`)
           setResult(res.data)
         } catch (e) {
           setResult(e)
@@ -29,19 +27,11 @@ const SearchOverlay = () => {
   }, [searchTerm])
   return (
     <div className={"search__overlay"}>
-      <span
-        className="search__close"
-        onClick={() => appDispatch({ type: "closeSearch" })}
-      >
+      <span className="search__close" onClick={() => appDispatch({ type: "closeSearch" })}>
         <i class="fas fa-times"></i>
       </span>
       <div className="container">
-        <input
-          type="text"
-          className="search__input"
-          placeholder="Search"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <input type="text" className="search__input" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} />
         <div className="search__content">
           {!Boolean(result.length) && <h4>{message}</h4>}
           {Boolean(result.length) && <SearchOverlayItem result={result} />}

@@ -7,17 +7,11 @@ const Cards = (post) => {
     month: "long",
     day: "numeric"
   }
-  let date = new Date(post.post.published_at).toLocaleDateString(
-    "en-US",
-    options
-  )
+  let date = new Date(post.post.published_at).toLocaleDateString("en-US", options)
   return (
     <div className="card">
       <div className="card__img">
-        <img
-          src={`http://localhost:1337${post.post.hero[0].formats.medium.url}`}
-          alt={post.post.title}
-        />
+        <img src={`https://nextjs-blog-backend.herokuapp.com${post.post.hero[0].formats.medium.url}`} alt={post.post.title} />
       </div>
       <div className="card__body">
         <span className="card__date">{date.toString()}</span>

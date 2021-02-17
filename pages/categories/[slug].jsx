@@ -11,9 +11,7 @@ export default function index({ data }) {
           <CategoryMenu />
         </div>
         <div className="category-content">
-          <h1 className="heading-secondary category-content__title">
-            {data[0].category}
-          </h1>
+          <h1 className="heading-secondary category-content__title">{data[0].category}</h1>
           <Grid>
             {data[0].posts.map((post) => (
               <Card post={post} />
@@ -26,9 +24,7 @@ export default function index({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(
-    `http://strapi:1337/categories?category_contains=${context.params.slug}`
-  )
+  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/categories?category_contains=${context.params.slug}`)
   const data = await res.json()
   return {
     props: {
@@ -38,7 +34,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`http://strapi:1337/categories`)
+  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/categories`)
   const data = await res.json()
   const paths = data.map((category) => ({
     params: { slug: category.category }

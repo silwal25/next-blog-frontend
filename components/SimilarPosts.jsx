@@ -8,11 +8,7 @@ export default function SimilarPosts({ category, id }) {
   const [data, setData] = useState([])
   useEffect(async () => {
     try {
-      const res = await Axios.get(
-        `/posts?${category
-          .map((category) => `categories.category_contains=${category}&`)
-          .join("")}id_ne=${id}&_limit=5`
-      )
+      const res = await Axios.get(`/posts?${category.map((category) => `categories.category_contains=${category}&`).join("")}id_ne=${id}&_limit=5`)
       setData(res.data)
     } catch (e) {
       console.log(e)
@@ -26,16 +22,11 @@ export default function SimilarPosts({ category, id }) {
           <Link href={`/post/${data.id}`}>
             <a>
               <div className="similar-post-item--left">
-                <img
-                  src={`http://localhost:1337${data.hero[0].formats.thumbnail.url}`}
-                  alt={data.title}
-                />
+                <img src={`https://nextjs-blog-backend.herokuapp.com${data.hero[0].formats.thumbnail.url}`} alt={data.title} />
               </div>
               <div className="similar-post-item--right">
                 <h4 className="heading-quaternary">{data.title}</h4>
-                <span className="similar-post-item__by">
-                  by {data.author.name}
-                </span>
+                <span className="similar-post-item__by">by {data.author.name}</span>
               </div>
             </a>
           </Link>
