@@ -3,7 +3,8 @@ import Comment from "../../../components/Comment"
 import SimilarPosts from "../../../components/SimilarPosts"
 import ReactMarkdown from "react-markdown"
 
-const Post = ({ post }) => {
+const Post = ({ post, imageURL }) => {
+  console.log(post[0].hero[0].formats.large.url)
   const options = {
     weekday: "long",
     year: "numeric",
@@ -35,7 +36,7 @@ const Post = ({ post }) => {
           <span className="single-post__by-line">
             by {post[0].author.name} | <span className="single-post__date">{date}</span>
           </span>
-          <img src={`${process.env.BACKEND_URL}${post[0].hero[0].formats.large.url}`} alt="" className="single-post__img" />
+          <img src={post[0].hero[0].formats.large.url} alt="" className="single-post__img" />
           <div className="single-post__content">
             <ReactMarkdown source={post[0].content} />
             {/**<ReactMarkdown source={post[0].summary} className="single-post__summary" /> */}
@@ -81,9 +82,11 @@ const Post = ({ post }) => {
 export async function getStaticProps(context) {
   const res = await fetch(`${process.env.BACKEND_URL}/posts?id=${context.params.id}`)
   const post = await res.json()
+  const imageURL = `${process.env.BACKEND_URL}${post[0].hero[0].formats.large.url}`
   return {
     props: {
-      post
+      post,
+      imageURL
     }
   }
 }

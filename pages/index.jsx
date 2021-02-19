@@ -20,7 +20,7 @@ export default function Home({ posts, featured }) {
     </>
   )
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.BACKEND_URL}/posts?featured=true&_sort=published_at:desc&_limit=3`)
   const posts = await res.json()
   const featuredRes = await fetch(`${process.env.BACKEND_URL}/posts?_sort=published_at:DESC&_limit=6`)

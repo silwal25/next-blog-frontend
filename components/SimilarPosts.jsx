@@ -22,7 +22,7 @@ export default function SimilarPosts({ category, id }) {
           <Link href={`/post/${data.id}`}>
             <a>
               <div className="similar-post-item--left">
-                <img src={`${process.env.BACKEND_URL}${data.hero[0].formats.thumbnail.url}`} alt={data.title} />
+                <img src={data.hero[0].formats.thumbnail.url} alt={data.title} />
               </div>
               <div className="similar-post-item--right">
                 <h4 className="heading-quaternary">{data.title}</h4>

@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import StateContext from "../components/StateContext"
 import DispatchContext from "../components/DispatchContext"
 import Axios from "axios"
-Axios.defaults.baseURL = process.env.BACKENDURL || "http://localhost:1337"
+Axios.defaults.baseURL = "https://desolate-castle-84067.herokuapp.com"
 
 import "../styles/globals.scss"
 

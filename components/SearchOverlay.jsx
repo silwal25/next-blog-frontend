@@ -13,7 +13,7 @@ const SearchOverlay = () => {
     if (searchTerm.length >= 3) {
       const request = setTimeout(async () => {
         try {
-          const res = await Axios.get(`${process.env.BACKEND_URL}/posts?title_contains=${searchTerm}`)
+          const res = await Axios.get(`/posts?title_contains=${searchTerm}`)
           setResult(res.data)
         } catch (e) {
           setResult(e)

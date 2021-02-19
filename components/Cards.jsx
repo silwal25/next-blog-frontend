@@ -11,7 +11,7 @@ const Cards = (post) => {
   return (
     <div className="card">
       <div className="card__img">
-        <img src={`${process.env.BACKEND_URL}${post.post.hero[0].formats.medium.url}`} alt={post.post.title} />
+        <img src={post.post.hero[0].formats.medium.url} alt={post.post.title} />
       </div>
       <div className="card__body">
         <span className="card__date">{date.toString()}</span>
