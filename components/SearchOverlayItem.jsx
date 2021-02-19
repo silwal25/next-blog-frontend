@@ -13,7 +13,7 @@ export default function SearchOverlayItem({ result }) {
             <Link href={`/post/${post.id}`}>
               <a>
                 <div className="search-item__img">
-                  <img src={`https://nextjs-blog-backend.herokuapp.com${post.hero[0].formats.thumbnail.url}`} alt="" className="search-item__img" />
+                  <img src={`${process.env.BACKEND_URL}${post.hero[0].formats.thumbnail.url}`} alt="" className="search-item__img" />
                 </div>
                 <div className="search-item__body">
                   <h4 className="search-item__title">{post.title}</h4>

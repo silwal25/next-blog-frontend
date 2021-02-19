@@ -13,7 +13,7 @@ const Hero = ({ featuredPosts }) => {
   return (
     <div className="hero">
       <div className="hero__left">
-        <img src={`https://nextjs-blog-backend.herokuapp.com${featuredPosts[0].hero[0].formats.large.url}`} alt={featuredPosts[0].title} className="hero__img" />
+        <img src={`${process.env.BACKEND_URL}${featuredPosts[0].hero[0].formats.large.url}`} alt={featuredPosts[0].title} className="hero__img" />
         <Link href={`/post/${featuredPosts[0].id}`}>
           <a className="hero__link">
             <div className="hero__content-box">
@@ -27,7 +27,7 @@ const Hero = ({ featuredPosts }) => {
       </div>
       <div className="hero__right">
         <div className="hero__right--1">
-          <img src={`https://nextjs-blog-backend.herokuapp.com${featuredPosts[1].hero[0].formats.medium.url}`} alt={featuredPosts[1].title} className="hero__img" />
+          <img src={`${process.env.BACKEND_URL}${featuredPosts[1].hero[0].formats.medium.url}`} alt={featuredPosts[1].title} className="hero__img" />
           <Link href={`/post/${featuredPosts[1].id}`}>
             <a className="hero__link">
               <div className="hero__content-box">
@@ -40,7 +40,7 @@ const Hero = ({ featuredPosts }) => {
           </Link>
         </div>
         <div className="hero__right--2">
-          <img src={`https://nextjs-blog-backend.herokuapp.com${featuredPosts[2].hero[0].formats.medium.url}`} alt={featuredPosts[2].title} className="hero__img" />
+          <img src={`${process.env.BACKEND_URL}${featuredPosts[2].hero[0].formats.medium.url}`} alt={featuredPosts[2].title} className="hero__img" />
           <Link href={`/post/${featuredPosts[2].id}`}>
             <a className="hero__link">
               <div className="hero__content-box">

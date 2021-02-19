@@ -22,7 +22,7 @@ const Post = ({ post }) => {
       }
     }
     try {
-      const res = await Axios.post("https://nextjs-blog-backend.herokuapp.com/comments", data)
+      const res = await Axios.post(`${process.env.BACKEND_URL}/comments`, data)
     } catch (e) {
       console.log(e)
     }
@@ -35,10 +35,10 @@ const Post = ({ post }) => {
           <span className="single-post__by-line">
             by {post[0].author.name} | <span className="single-post__date">{date}</span>
           </span>
-          <img src={`https://nextjs-blog-backend.herokuapp.com${post[0].hero[0].formats.large.url}`} alt="" className="single-post__img" />
+          <img src={`${process.env.BACKEND_URL}${post[0].hero[0].formats.large.url}`} alt="" className="single-post__img" />
           <div className="single-post__content">
             <ReactMarkdown source={post[0].content} />
-            <ReactMarkdown source={post[0].summary} className="single-post__summary" />
+            {/**<ReactMarkdown source={post[0].summary} className="single-post__summary" /> */}
           </div>
           <div className="comment-form">
             <h2 className="heading-secondary">Leave a comment</h2>
@@ -79,7 +79,7 @@ const Post = ({ post }) => {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/posts?id=${context.params.id}`)
+  const res = await fetch(`${process.env.BACKEND_URL}/posts?id=${context.params.id}`)
   const post = await res.json()
   return {
     props: {
@@ -89,7 +89,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("https://nextjs-blog-backend.herokuapp.com/posts")
+  const res = await fetch(`${process.env.BACKEND_URL}/posts`)
   const posts = await res.json()
   const ids = posts.map((article) => article.id)
   const paths = ids.map((id) => ({ params: { id: id.toString() } }))

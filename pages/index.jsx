@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Hero from "../components/Hero"
 import Card from "../components/Cards"
 import Grid from "../components/Grid"
@@ -22,9 +21,9 @@ export default function Home({ posts, featured }) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/posts?featured=true&_sort=published_at:desc&_limit=3`)
+  const res = await fetch(`${process.env.BACKEND_URL}/posts?featured=true&_sort=published_at:desc&_limit=3`)
   const posts = await res.json()
-  const featuredRes = await fetch(`https://nextjs-blog-backend.herokuapp.com/posts?_sort=published_at:DESC&_limit=6`)
+  const featuredRes = await fetch(`${process.env.BACKEND_URL}/posts?_sort=published_at:DESC&_limit=6`)
   const featured = await featuredRes.json()
   return {
     props: {

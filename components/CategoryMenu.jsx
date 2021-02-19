@@ -6,7 +6,7 @@ export default function CategoryMenu() {
   const [data, setData] = useState([])
   useEffect(async () => {
     try {
-      const res = await Axios.get("https://nextjs-blog-backend.herokuapp.com/categories")
+      const res = await Axios.get(`${process.env.BACKEND_URL}/categories`)
       const data = res.data
       setData(data.map((category) => category.category))
     } catch (e) {

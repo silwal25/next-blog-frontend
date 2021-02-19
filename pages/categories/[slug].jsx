@@ -24,7 +24,7 @@ export default function index({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/categories?category_contains=${context.params.slug}`)
+  const res = await fetch(`${process.env.BACKEND_URL}/categories?category_contains=${context.params.slug}`)
   const data = await res.json()
   return {
     props: {
@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`https://nextjs-blog-backend.herokuapp.com/categories`)
+  const res = await fetch(`${process.env.BACKEND_URL}/categories`)
   const data = await res.json()
   const paths = data.map((category) => ({
     params: { slug: category.category }

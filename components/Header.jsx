@@ -13,10 +13,7 @@ const Header = () => {
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
       </Head>
       <header className="header">
         <div className="container">
@@ -29,7 +26,7 @@ const Header = () => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/categories/Indian">categories</Link>
+                <Link href="/categories/dessert">categories</Link>
               </li>
               <li>
                 <Link href="/">contact</Link>
@@ -39,10 +36,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <i
-            class="fas fa-search"
-            onClick={() => appDispatch({ type: "openSearch" })}
-          ></i>
+          <i class="fas fa-search" onClick={() => appDispatch({ type: "openSearch" })}></i>
         </div>
       </header>
     </>
